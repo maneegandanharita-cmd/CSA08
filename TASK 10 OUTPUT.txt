@@ -1,0 +1,7 @@
+n=   300 float(sum of rounded)=226595.850000 Decimal(each rounded)=226595.85 Decimal(round total)=226595.85
+         |float-Decimal|=0.0000000000  round-each vs round-total diff=0.00  time float=0.0003s Decimal=0.0004s
+n=  6000 float(sum of rounded)=4354532.680000 Decimal(each rounded)=4354532.68 Decimal(round total)=4354532.68
+         |float-Decimal|=0.0000000003  round-each vs round-total diff=0.00  time float=0.0048s Decimal=0.0069s
+n=150000 float(sum of rounded)=108225354.840000 Decimal(each rounded)=108225354.84 Decimal(round total)=108225354.84
+         |float-Decimal|=0.0000000036  round-each vs round-total diff=0.00  time float=0.1383s Decimal=0.1874s
+recalculate: 0.0778s | rate-table: 0.0362s | distinct pairs k=231

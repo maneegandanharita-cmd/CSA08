@@ -1,0 +1,6 @@
+   10 3.5 8.5  -> running total 300.00
+  8.5 4.2 8.7  -> running total 583.90
+   12 3.1 8.3  -> running total 917.50
+Hand trace total = 917.50, program total = 917.5
+store-all peak bytes : 6424072
+running-total peak   : 960

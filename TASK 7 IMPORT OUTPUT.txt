@@ -1,0 +1,6 @@
+__name__ of milkrate when imported: milkrate
+payout(8.5, 4.2, 8.7)      = 283.9
+milkrate.rate_per_litre    = 27.8
+mr.BASE_RATE               = 30.0
+'milkrate' in sys.modules  = True
+sys.path[0] (searched 1st) = /home/claude/repo/task07_module

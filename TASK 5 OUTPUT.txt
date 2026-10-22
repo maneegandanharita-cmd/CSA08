@@ -1,0 +1,14 @@
+'8.5'      string-check=True   try/except=8.5
+' 8.5 '    string-check=True   try/except=8.5
+'8,5'      string-check=False  try/except=None
+'eight'    string-check=False  try/except=None
+'-3'       string-check=False  try/except=-3.0
+'1e2'      string-check=False  try/except=100.0
+'8..5'     string-check=False  try/except=None
+''         string-check=False  try/except=None
+
+Timing 100000 calls on '8.5':
+ string check: 0.0178
+ try/except  : 0.0078
+
+|  283.90| |  Rs| |   12| |4.2   |

@@ -1,0 +1,17 @@
+Old design with 2-decimal readings (fat 4.24 vs 4.20, same rate = wrong):
+  old rate(4.24, 8.5) = 32.8  old rate(4.20, 8.5) = 32.8
+  new rate(4.24, 8.5) = 32.96  new rate(4.20, 8.5) = 32.80
+
+Case                    Expected      Actual
+regular standard           30.00       30.00  PASS
+regular 4.2/8.7            33.40       33.40  PASS
+summer standard            32.00       32.00  PASS
+summer 4.2/8.7             35.75       35.75  PASS
+regular 4.24/8.53         33.050       33.05  PASS
+bonus 500 L (no)            0.00        0.00  PASS
+bonus 500.5 L             250.25      250.25  PASS
+season Apr                summer      summer  PASS
+season Jul               regular     regular  PASS
+regular  payments=17350.00 bonus=275.00 grand total=17625.00
+summer   payments=18537.50 bonus=275.00 grand total=18812.50
+ALL TASK 12 TESTS PASSED

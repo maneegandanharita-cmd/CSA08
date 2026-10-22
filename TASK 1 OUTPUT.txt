@@ -1,0 +1,4 @@
+n=   300  time=0.000072s  list+tuples size=2456 bytes (list only)
+n=  3000  time=0.000536s  list+tuples size=24056 bytes (list only)
+n= 30000  time=0.005176s  list+tuples size=240056 bytes (list only)
+Design A source size for 300 farmers ~ 300 x 3 assignments + 300 formula lines = 1200 lines

@@ -1,0 +1,5 @@
+x = 10 <class 'int'>
+x = ten <class 'str'>
+after swap: 8.5 3.5
+constant changed by mistake -> 99
+dict alternative: 30.8
