@@ -2,7 +2,9 @@
 
 Python solution for the village milk co-operative payment problem (Tasks 1-12).
 
-**Name: HARITA M  ()  **Reg. No:** 1920260142  ()  **Course:** CSA0825
+**Name: HARITA M  
+**Reg. No:** 1920260142   
+**Course:** CSA0825
 
 ## Structure
 | Folder | Task | Run |
