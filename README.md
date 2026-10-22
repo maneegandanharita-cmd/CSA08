@@ -1,12 +1,11 @@
-# Milk Co-operative Payment Calculator - Assignment
+CO1 ASSIGNMENT 
+MILK COOPERATIVE PAYMENT CALCULATOR 
 
-Python solution for the village milk co-operative payment problem (Tasks 1-12).
-
-**Name: HARITA M  
+Name: HARITA M  
 **Reg. No:** 1920260142   
 **Course:** CSA0825
 
-## Structure
+CONTENT
 | Folder | Task | Run |
 |---|---|---|
 | TASK 1 ( Analysis )| 1 - problem analysis, 300-farmer scaling | `python task1_scaling.py` |
