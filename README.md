@@ -1,11 +1,11 @@
-CO1 ASSIGNMENT 
-MILK COOPERATIVE PAYMENT CALCULATOR 
+**CO1 ASSIGNMENT 
+**MILK COOPERATIVE PAYMENT CALCULATOR 
 
 Name: HARITA M  
 **Reg. No:** 1920260142   
 **Course:** CSA0825
 
-CONTENT
+**CONTENT
 | Folder | Task | Run |
 |---|---|---|
 | TASK 1 ( Analysis )| 1 - problem analysis, 300-farmer scaling | `python task1_scaling.py` |
