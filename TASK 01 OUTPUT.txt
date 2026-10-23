@@ -1,4 +1,11 @@
-n=   300  time=0.000072s  list+tuples size=2456 bytes (list only)
-n=  3000  time=0.000536s  list+tuples size=24056 bytes (list only)
-n= 30000  time=0.005176s  list+tuples size=240056 bytes (list only)
-Design A source size for 300 farmers ~ 300 x 3 assignments + 300 formula lines = 1200 lines
+Enter number of farmers: 1
+Enter farmer ID: F101
+Enter litres of milk: 10
+Enter fat percentage: 4
+Enter SNF percentage: 8
+Enter shift (Morning/Evening): Morning
+Farmer ID: F101
+Shift: Morning
+Rate per litre: Rs. 36.0
+Payment amount: Rs. 360.0
+Ten-day total: Rs. 3600.0
