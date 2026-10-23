@@ -1,14 +1,11 @@
-(4.2 - 3.5) / 0.1      = 7.000000000000002
-round((4.2-3.5)/0.1)   = 7
--2 ** 2                = -4   (** binds tighter than unary minus)
-2 ** 3 ** 2            = 512  (** is right-associative)
-round(2.5), round(3.5) = 2 4  (banker's rounding)
-round(-2.5)            = -2
-int(-2.7), math.floor(-2.7), round(-2.7) = -2 -3 -3
-1.1 * 3                = 3.3000000000000003
-2.0 <= fat <= 7.0      = True
-True and not False or False = True
+Fat: 4.2
+Fat steps: 7
+Milk rate: 32.8
 
-Alternative step counting (base 30, fat 0.40, snf at standard):
-fat=4.2: exact=7.000000000000002      round->  7 rate 32.8 | int->  7 rate 32.8 | floor->  7 rate 32.8
-fat=3.1: exact=-3.999999999999999     round-> -4 rate 28.4 | int-> -3 rate 28.8 | floor-> -4 rate 28.4
+Fat: 3.1
+Fat steps: -4
+Milk rate: 28.4
+
+Fat: 3.5
+Fat steps: 0
+Milk rate: 30.0
