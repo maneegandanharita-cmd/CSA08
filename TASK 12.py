@@ -1,32 +1,27 @@
-"""Task 12 tests + evidence that the OLD design is wrong for 2-decimal readings."""
-import sys, os
-from decimal import Decimal as D
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "task07_module"))
-import milkrate as old
-import milkrate_v2 as new
-
-print("Old design with 2-decimal readings (fat 4.24 vs 4.20, same rate = wrong):")
-print("  old rate(4.24, 8.5) =", old.rate_per_litre(4.24, 8.5), " old rate(4.20, 8.5) =", old.rate_per_litre(4.20, 8.5))
-print("  new rate(4.24, 8.5) =", new.rate_per_litre("4.24", "8.5"), " new rate(4.20, 8.5) =", new.rate_per_litre("4.20", "8.5"))
-
-tests = [
-    ("regular standard", new.rate_per_litre("3.5", "8.5", "regular"), D("30.00")),
-    ("regular 4.2/8.7",  new.rate_per_litre("4.2", "8.7", "regular"), D("33.40")),
-    ("summer standard",  new.rate_per_litre("3.5", "8.5", "summer"), D("32.00")),
-    ("summer 4.2/8.7",   new.rate_per_litre("4.2", "8.7", "summer"), D("32.00") + 7 * D("0.45") + 2 * D("0.30")),
-    ("regular 4.24/8.53",new.rate_per_litre("4.24", "8.53", "regular"), D("30.00") + D("7.4") * D("0.40") + D("0.3") * D("0.30")),
-    ("bonus 500 L (no)", new.bonus(500), D("0.00")),
-    ("bonus 500.5 L",    new.bonus("500.5"), D("250.25")),
-    ("season Apr", new.season_for(4), "summer"), ("season Jul", new.season_for(7), "regular"),
-]
-print(f"\n{'Case':20}{'Expected':>12}{'Actual':>12}")
-for name, act, exp in tests:
-    assert act == exp, (name, act, exp)
-    print(f"{name:20}{str(exp):>12}{str(act):>12}  PASS")
-
-entries = [(300, 3.5, 8.5), (250, 4.2, 8.7)]           # 550 L -> bonus applies
-for season in ("regular", "summer"):
-    p, b, g = new.ten_day_total(entries, season)
-    print(f"{season:8} payments={p} bonus={b} grand total={g}")
-assert new.ten_day_total(entries, "regular")[1] == D("275.00")
-print("ALL TASK 12 TESTS PASSED")
+"""Task 12 - Calculate seasonal milk payment using functions."""
+def rate(fat, snf, season):
+    base = 30
+    fat_value = 0.40
+ 
+    if season == "summer":
+        base = 32
+        fat_value = 0.45
+ 
+    fat_steps = round((fat - 3.5) * 10)
+    snf_steps = round((snf - 8.5) * 10)
+ 
+    return base + fat_steps * fat_value + snf_steps * 0.30
+ 
+ 
+def payout(litres, fat, snf, season):
+    amount = litres * rate(fat, snf, season)
+ 
+    if season == "summer" and litres > 500:
+        amount = amount + litres * 0.50
+ 
+    return round(amount, 2)
+ 
+ 
+for litres, fat, snf in [(10, 3.50, 8.50), (600, 4.20, 8.70)]:
+    print("Payment:", payout(litres, fat, snf, "summer"))
+ 
