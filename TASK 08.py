@@ -1,20 +1,29 @@
-"""Task 8 alternative: store list vs running total; verifies the hand trace."""
-import sys, os, tracemalloc
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "task07_module"))
-from milkrate import payout
-
-entries = [(10, 3.5, 8.5), (8.5, 4.2, 8.7), (12, 3.1, 8.3)]
-total = 0.0
-for l, f, s in entries:
-    total += payout(l, f, s)
-    print(f"{l:5} {f} {s}  -> running total {total:.2f}")
-print("Hand trace total = 917.50, program total =", round(total, 2))
-
-n = 200000
-tracemalloc.start()
-stored = [payout(10, 3.5, 8.5) for _ in range(n)]; sum(stored)
-print("store-all peak bytes :", tracemalloc.get_traced_memory()[1]); tracemalloc.stop()
-tracemalloc.start()
-run = 0.0
-for _ in range(n): run += payout(10, 3.5, 8.5)
-print("running-total peak   :", tracemalloc.get_traced_memory()[1]); tracemalloc.stop()
+"""Task 8 - Calculate and total milk payments for ten days."""
+BASE_RATE = 30.0
+ 
+total = 0
+ 
+for i in range(1, 6):
+    try:
+        litres = float(input("Enter litres: "))
+        fat = float(input("Enter fat: "))
+        snf = float(input("Enter SNF: "))
+ 
+        if litres < 0 or fat < 0 or not (0 <= fat <= 10):
+            print("Invalid input")
+            continue
+ 
+        fat_steps = round((fat - 3.5) / 0.1)
+        snf_steps = round((snf - 8.5) / 0.1)
+ 
+        rate = BASE_RATE + fat_steps * 0.40 + snf_steps * 0.30
+        payment = round(litres * rate, 2)
+ 
+        total += payment
+        print("Rate:", round(rate, 2))
+        print("Payment:", payment)
+ 
+    except ValueError:
+        print("Enter numbers only")
+ 
+print("Total payment:", round(total, 2))
