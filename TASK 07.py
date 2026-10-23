@@ -1,26 +1,35 @@
-"""Rate card of the village milk co-operative (used as a module)."""
-BASE_RATE = 30.00       # Rs per litre for milk with 3.5 % fat and 8.5 % SNF
-FAT_STEP_VALUE = 0.40   # Rs per litre for every 0.1 % of fat above or below 3.5
-SNF_STEP_VALUE = 0.30   # Rs per litre for every 0.1 % of SNF above or below 8.5
-STD_FAT = 3.5
-STD_SNF = 8.5
-STEP = 0.1
-MIN_FAT, MAX_FAT = 2.0, 7.0
-
-
+"""Task 7 - Print a formatted milk co-operative rate card and payouts."""
+BASE_RATE = 30.00
+FAT_STEP_VALUE = 0.40
+SNF_STEP_VALUE = 0.30
+ 
+ 
 def rate_per_litre(fat, snf):
-    """Returns the price per litre, rounded to 2 decimals."""
-    fat_steps = round((fat - STD_FAT) / STEP)
-    snf_steps = round((snf - STD_SNF) / STEP)
-    return round(BASE_RATE + fat_steps * FAT_STEP_VALUE + snf_steps * SNF_STEP_VALUE, 2)
-
-
+    """Return the milk rate per litre, rounded to 2 decimals."""
+    fat_steps = round((fat - 3.5) / 0.1)
+    snf_steps = round((snf - 8.5) / 0.1)
+ 
+    rate = BASE_RATE
+    rate += fat_steps * FAT_STEP_VALUE
+    rate += snf_steps * SNF_STEP_VALUE
+ 
+    return round(rate, 2)
+ 
+ 
 def payout(litres, fat, snf):
-    """Returns the amount payable to the farmer, rounded to 2 decimals."""
-    return round(litres * rate_per_litre(fat, snf), 2)
-
-
+    """Return the payment amount, rounded to 2 decimals."""
+    rate = rate_per_litre(fat, snf)
+    return round(litres * rate, 2)
+ 
+ 
 if __name__ == "__main__":
-    for litres, fat, snf in [(10, 3.5, 8.5), (8.5, 4.2, 8.7), (12, 3.1, 8.3)]:
-        rate, pay = rate_per_litre(fat, snf), payout(litres, fat, snf)
-        print(f"{litres:5} L  fat {fat}  snf {snf}  rate {rate:6.2f}  pay {pay:8.2f}")
+    for litres, fat, snf in [
+        (10, 3.5, 8.5),
+        (8.5, 4.2, 8.7),
+        (12, 3.1, 8.3)
+    ]:
+        rate = rate_per_litre(fat, snf)
+        pay = payout(litres, fat, snf)
+        print(f"{litres:5} L fat {fat} snf {snf} rate {rate:.2f} pay {pay:.2f}")
+ 
+ 
