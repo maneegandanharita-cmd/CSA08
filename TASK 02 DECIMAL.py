@@ -1,4 +1,4 @@
-"""Task 2 - Complete the Code (TODO 1) + alternatives."""
+"""Task 2 - Calculate milk rate and payout using reusable functions."""
 BASE_RATE = 30.00
 FAT_STEP_VALUE = 0.40
 SNF_STEP_VALUE = 0.30
