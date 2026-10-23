@@ -1,18 +1,26 @@
-Case                Expected    Actual  Result
-standard              300.00    300.00  PASS
-fat above             320.00    320.00  PASS
-fat below             280.00    280.00  PASS
-snf above             315.00    315.00  PASS
-snf below             285.00    285.00  PASS
-lowest fat 2.0        240.00    240.00  PASS
-highest fat 7.0       440.00    440.00  PASS
-zero litres             0.00      0.00  PASS
-sample 1              283.90    283.90  PASS
-sample 2              333.60    333.60  PASS
-text litres       ValueErrorValueError  PASS (not a valid number: 'eight')
-negative litres   ValueErrorValueError  PASS (litres cannot be negative)
-fat 1.9           ValueErrorValueError  PASS (fat must be between 2.0 and 7.0)
-fat 7.1           ValueErrorValueError  PASS (fat must be between 2.0 and 7.0)
-comma 8,5         ValueErrorValueError  PASS (not a valid number: '8,5')
-5-entry total expected 1517.50 actual 1517.5 PASS
-ALL TESTS PASSED
+Enter litres: 10
+Enter fat: 3.5
+Enter SNF: 8.5
+Rate: 30.0
+Payment: 300.0
+Enter litres: 8.5
+Enter fat: 4.2
+Enter SNF: 8.7
+Rate: 33.4
+Payment: 283.9
+Enter litres: 10
+Enter fat: 3.5
+Enter SNF: 8.5
+Rate: 30.0
+Payment: 300.0
+Enter litres: 8.5
+Enter fat: 4.2
+Enter SNF: 8.7
+Rate: 33.4
+Payment: 283.9
+Enter litres: 10
+Enter fat: 3.5
+Enter SNF: 8.5
+Rate: 30.0
+Payment: 300.0
+Total payment: 1467.8
