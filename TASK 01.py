@@ -1,22 +1,24 @@
-"""Task 1 - alternative design: separate variables vs one tuple per entry."""
-import sys, time
-
-# Design A: 3 variables per farmer. For 3 farmers the code already looks like this,
-# and for 300 farmers it would need 900 names and 300 copies of the formula.
-litres1, fat1, snf1 = 10, 3.5, 8.5
-litres2, fat2, snf2 = 8.5, 4.2, 8.7
-litres3, fat3, snf3 = 12, 3.1, 8.3
-# ... litres300, fat300, snf300 ...  (impossible to loop over)
-
-# Design B: list of tuples - one loop handles any n.
-def total(entries):
-    t = 0.0
-    for litres, fat, snf in entries:
-        t += litres * (30 + round((fat - 3.5) / 0.1) * 0.4 + round((snf - 8.5) / 0.1) * 0.3)
-    return round(t, 2)
-
-for n in (300, 3000, 30000):
-    entries = [(10, 3.5, 8.5)] * n
-    s = time.perf_counter(); total(entries); e = time.perf_counter()
-    print(f"n={n:6}  time={e - s:.6f}s  list+tuples size={sys.getsizeof(entries)} bytes (list only)")
-print("Design A source size for 300 farmers ~ 300 x 3 assignments + 300 formula lines = 1200 lines")
+"""Task 1 - Calculate milk payment for farmers using litres, fat and SNF."""
+DAYS = 10
+ 
+n = int(input("Enter number of farmers: "))
+ 
+for i in range(n):
+    farmer_id = input("Enter farmer ID: ")
+    litres = float(input("Enter litres of milk: "))
+    fat = float(input("Enter fat percentage: "))
+    snf = float(input("Enter SNF percentage: "))
+    shift = input("Enter shift (Morning/Evening): ")
+ 
+    if litres < 0 or fat < 2 or fat > 7 or snf < 0 or snf > 15:
+        print("Invalid data")
+    else:
+        rate = (fat * 5) + (snf * 2)
+        amount = litres * rate
+        total = amount * DAYS
+ 
+        print("Farmer ID:", farmer_id)
+        print("Shift:", shift)
+        print("Rate per litre: Rs.", rate)
+        print("Payment amount: Rs.", amount)
+        print("Ten-day total: Rs.", total)
