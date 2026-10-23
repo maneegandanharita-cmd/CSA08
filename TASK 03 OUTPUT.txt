@@ -1,5 +1,9 @@
-x = 10 <class 'int'>
-x = ten <class 'str'>
-after swap: 8.5 3.5
-constant changed by mistake -> 99
-dict alternative: 30.8
+Enter fat: 4.0
+Enter SNF: 9.0
+Milk rate = 33.5
+Enter fat: 3.5
+Enter SNF: 8.5
+Milk rate = 30.0
+Enter fat: 5.0
+Enter SNF: 9.5
+Milk rate = 39.0
