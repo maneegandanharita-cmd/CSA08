@@ -1,6 +1,31 @@
-ten_day_total: 917.5
-300.0
-show_payout returned: None
-bad_scope() = 0 | milkrate.BASE_RATE still 30.0
-lambda result: 283.9
-function-call overhead: payout 0.0638s vs lambda 0.0450s for 100000 calls
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Litres: 10
+Fat: 4.0
+SNF: 9.0
+Total payment: 3350.0
